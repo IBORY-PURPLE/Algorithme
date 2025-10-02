@@ -60,9 +60,16 @@
 
 import sys
 
-str1 = sys.stdin.readline().strip()
+# str1 = sys.stdin.readline().strip()
 
-len1 = len(str1)
-for i in range(1, len1+1):
-    print(i)
-print(len1)
+# len1 = len(str1)
+# for i in range(1, len1+1):
+#     print(i)
+
+from collections import deque
+queue = deque([1,2,3])
+
+print(queue)
+
+queue.append(4)
+print(queue)
