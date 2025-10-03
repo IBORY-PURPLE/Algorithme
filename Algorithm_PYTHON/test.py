@@ -66,10 +66,13 @@ import sys
 # for i in range(1, len1+1):
 #     print(i)
 
-from collections import deque
-queue = deque([1,2,3])
+# from collections import deque
+# queue = deque([1,2,3])
 
-print(queue)
+# print(queue)
 
-queue.append(4)
-print(queue)
+# queue.append(4)
+# print(queue)
+
+print("안녕하세요.\n")
+print("안녕하세요.")
