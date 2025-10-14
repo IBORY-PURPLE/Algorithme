@@ -51,6 +51,20 @@ if __name__ == "__main__":
         't': ['r', 'u'],
         'z': ['w', 'x']
     }
+    """
+    D = {
+        's': 5,
+        'r': 3,
+        'v': 2,
+    }
+
+    P = {
+        's': 'r',
+        'r': 'v',
+        'v': 'u;,
+    }
+
+    """
     start = 's'
 
     distances, predecessors = bfs(sample_graph, start)
