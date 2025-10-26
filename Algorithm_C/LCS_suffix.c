@@ -1,9 +1,9 @@
-/* --- 2. 접미사(Suffix) 방식 코드 (우리의 구현) ---
+//  --- 2. 접미사(Suffix) 방식 코드 (우리의 구현) ---
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
-int max(int a, int b) { return (a > b) ? a : b; }
+// int max(int a, int b) { return (a > b) ? a : b; }
 
 void lcs_suffix(char *X, char *Y)
 {
@@ -41,4 +41,3 @@ void lcs_suffix(char *X, char *Y)
     // [차이점 4] 최종 결과: 테이블의 가장 왼쪽 위에 저장됨
     printf("[접미사 방식] LCS의 길이는 %d 입니다.\n", table[0][0]);
 }
-*/
