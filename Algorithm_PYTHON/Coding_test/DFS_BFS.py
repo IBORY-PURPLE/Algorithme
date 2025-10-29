@@ -13,30 +13,22 @@ class Graph:
     def add_edge(self, s, e):
         self.G[s].append(e)
 
-    # 깊이 우선 탐색 (DFS)
     def dfs(self, v):
-        # 현재 노드 방문 처리 및 출력
         print(v, end=" ")
         self.C[v] = 1
 
-        # 현재 노드와 연결된 다른 노드를 재귀적으로 방문
         for i in self.G[v]:
             if not self.C[i]:
                 self.dfs(i)
 
-    # 너비 우선 탐색 (BFS)
     def bfs(self, s):
-        # 큐(queue) 생성 및 시작 노드 삽입
         q = deque([s])
-        # 시작 노드 방문 처리
         self.C[s] = 1
 
         while q:
-            # 큐에서 하나의 원소를 뽑아 출력
             v = q.popleft()
             print(v, end=" ")
 
-            # 해당 원소와 연결된, 아직 방문하지 않은 모든 원소들을 큐에 삽입
             for i in self.G[v]:
                 if not self.C[i]:
                     q.append(i)

@@ -1,6 +1,7 @@
 import sys
 import heapq
 
+# 다익스트라
 while True:
     try:
         n, m, q, s = map(int, sys.stdin.readline().split())

@@ -24,11 +24,18 @@ class Graph:
         self.edges = []
         # 플로이드-워셜용 인접 행렬
         self.dist_matrix = [[INF] * (n + 1) for _ in range(n + 1)]
+        # 위상정렬용
+        self.G = defaultdict(list)
+        self.In = defaultdict(int)
 
     def add_edge(self, u, v, w):
         """간선 추가 (다익스트라, 벨만-포드용)"""
         self.adj[u].append((v, w))
         self.edges.append((u, v, w))
+
+    def add_edge_topolo(self, s, e)
+        self.G[s].append(e)
+        self.In[e] += 1
 
     # ------------------------------------------------------------------
     # 2.4 최단 거리 - 다익스트라 (Dijkstra)
