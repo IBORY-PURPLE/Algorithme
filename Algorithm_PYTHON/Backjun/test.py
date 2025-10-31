@@ -28,14 +28,27 @@ input = sys.stdin.readline
 
 # ----------------------------------------------------------
 
-N = int(input())
-str = input().strip()
-sum = 0
-nums = list(map(int, str))
+# N = int(input())
+# str = input().strip()
+# sum = 0
+# nums = list(map(int, str))
 
-for i in nums:
-    sum += i
+# for i in nums:
+#     sum += i
 
-print(sum)
+# print(sum)
 
+str = (input().strip().lower())
+
+ascii_list = [ord(char) for char in str]
+result_list = [-1] * 26
+
+for i in range(97, 123):
+    find = False
+    for j in range(len(ascii_list)):
+        if ascii_list[j] == i and find == False:
+            find = True
+            result_list[i-97] = j
+
+print(*result_list)
 
