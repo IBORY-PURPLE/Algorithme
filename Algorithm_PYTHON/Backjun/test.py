@@ -54,21 +54,26 @@ input = sys.stdin.readline
 
 # ----------------------------------------------------------
 
-N = int(input().strip())
+# N = int(input().strip())
 
-for _ in range(N):
-    num, s = input().split()
-    num = int(num)
-    result = []
-    for char in s:
-        for _ in range(num):
-            result.append(char)
+# for _ in range(N):
+#     num, s = input().split()
+#     num = int(num)
+#     result = []
+#     for char in s:
+#         for _ in range(num):
+#             result.append(char)
 
-    print("".join(result))
+#     print("".join(result))
 
 
 # ----------------------------------------------------------
 
+s = input()
+
+word = s.strip().split()
+
+print(len(word))
 
 
 
