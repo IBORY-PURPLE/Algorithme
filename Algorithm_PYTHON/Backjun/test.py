@@ -69,21 +69,30 @@ input = sys.stdin.readline
 
 # ----------------------------------------------------------
 
-s = input()
+# s = input()
 
-word = s.strip().split()
+# word = s.strip().split()
 
-print(len(word))
-
-
-
-
-
+# print(len(word))
 
 
 # ----------------------------------------------------------
 
+num1, num2 = input().split()
 
+string_num1 = list(num1)
+string_num2 = list(num2)
+
+string_num1.reverse()
+string_num2.reverse()
+
+reversed_num1 = "".join(string_num1)
+reversed_num2 = "".join(string_num2)
+
+if reversed_num1 > reversed_num2:
+    print(reversed_num1)
+else :
+    print(reversed_num2)
 
 # ----------------------------------------------------------
 
