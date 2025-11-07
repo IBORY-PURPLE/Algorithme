@@ -144,17 +144,24 @@ input = sys.stdin.readline
 
 # ----------------------------------------------------------
 
-s = []
+# s = []
 
-for _ in range(100):
-    line = input().strip()
-    if line == "":
-        break
-    s.append(line)
+# for _ in range(100):
+#     line = input().strip()
+#     if line == "":
+#         break
+#     s.append(line)
 
-print(" ".join(s))
+# print(" ".join(s))
 # ----------------------------------------------------------
 
+n = int(input())
+
+for i in range(1, n+1):
+    print(' ' * (n - i) + '*' * (2*i - 1))
+
+for i in range(n-1, 0, -1):
+    print(' ' * (n - i) + '*' * (2*i - 1))
 
 
 # ----------------------------------------------------------
