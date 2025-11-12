@@ -166,10 +166,53 @@ input = sys.stdin.readline
 
 # ----------------------------------------------------------
 
+# N, A = input().split()
+# N = int(N)
+# A = int(A)
+
+# def sum_inverse(N, A):
+#     for x in range(N):
+#         if ((A+x) % N) == 0:
+#             return x
+#     return -1
+
+# def multi_inverse(N, A):
+#     for x in range(N):
+#         if ((A * x) % N) == 1:
+#             return x
+#     return -1
+
+# print(sum_inverse(N, A), multi_inverse(N, A))
+
 
 # ----------------------------------------------------------
 
 
+def extended_gcd(a: int, b: int):
+    old_r, r = a, b
+    old_x, x = 1, 0
+    old_y, y = 0, 1
+    while r != 0:
+        q = old_r // r
+        old_r, r = r, old_r - q * r
+        old_x, x = x, old_x - q * x
+        old_y, y = y, old_y - q * y
+    return old_r, old_x, old_y
+
+def modinv(a: int, m: int):
+    a %= m
+    g, x, _ = extended_gcd(a, m)
+    if g != 1:
+        return -1
+    return x % m
+
+def addinv(a: int, m: int):
+    return (-a) % m
+
+N_str, A_str = sys.stdin.readline().split()
+N = int(N_str); A = int(A_str)
+
+print(addinv(A, N), modinv(A, N))
 
 # ----------------------------------------------------------
 
