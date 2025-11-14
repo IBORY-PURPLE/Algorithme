@@ -188,39 +188,134 @@ input = sys.stdin.readline
 # ----------------------------------------------------------
 
 
-def extended_gcd(a: int, b: int):
-    old_r, r = a, b
-    old_x, x = 1, 0
-    old_y, y = 0, 1
-    while r != 0:
-        q = old_r // r
-        old_r, r = r, old_r - q * r
-        old_x, x = x, old_x - q * x
-        old_y, y = y, old_y - q * y
-    return old_r, old_x, old_y
+# def extended_gcd(a: int, b: int):
+#     old_r, r = a, b
+#     old_x, x = 1, 0
+#     old_y, y = 0, 1
+#     while r != 0:
+#         q = old_r // r
+#         old_r, r = r, old_r - q * r
+#         old_x, x = x, old_x - q * x
+#         old_y, y = y, old_y - q * y
+#     return old_r, old_x, old_y
 
-def modinv(a: int, m: int):
-    a %= m
-    g, x, _ = extended_gcd(a, m)
-    if g != 1:
-        return -1
-    return x % m
+# def modinv(a: int, m: int):
+#     a %= m
+#     g, x, _ = extended_gcd(a, m)
+#     if g != 1:
+#         return -1
+#     return x % m
 
-def addinv(a: int, m: int):
-    return (-a) % m
+# def addinv(a: int, m: int):
+#     return (-a) % m
 
-N_str, A_str = sys.stdin.readline().split()
-N = int(N_str); A = int(A_str)
+# N_str, A_str = sys.stdin.readline().split()
+# N = int(N_str); A = int(A_str)
 
-print(addinv(A, N), modinv(A, N))
-
-# ----------------------------------------------------------
-
+# print(addinv(A, N), modinv(A, N))
 
 # ----------------------------------------------------------
 
+# 슬라이싱
+# input = sys.stdin.readline
+
+# s1 = input().strip()
+# lst = list(s1)
+# print(s1)
+
+# rev = s1[::-1]
+# rev2 = "".join(reversed(s1))
+# lst.reverse()
+# print(rev)
+# print(rev2)
+# print("".join(lst))
 
 # ----------------------------------------------------------
+
+# input = sys.stdin.readline
+
+# s = input().strip()
+# rev = s[::-1]
+
+# def pellen(s, rev):
+#     if (s == rev):
+#         return 1
+#     return 0
+
+# print(pellen(s, rev))
+
+# ----------------------------------------------------------
+
+# input = sys.stdin.readline
+
+# s = input().strip()
+# lst = list(s)
+# cnt = 0
+
+# while i < len(lst):
+#     match lst[i]:
+#         case "c":
+#             if(lst[i+1] == "="):
+#                 cnt += 1
+#             elif(lst[i+1] == "-"):
+#                 cnt += 1
+#             else:
+#                 cnt += 1
+#         case "d":
+#             if(lst[i+1] == "z" and lst[i+2] == "="):
+#                 cnt += 1
+#             elif(lst[i+1] == "-"):
+#                 cnt += 1
+#             else:
+#                 cnt += 1
+#         case "l":
+#             if(lst[i+1] == "j"):
+#                 cnt += 1
+#             else:
+#                 cnt += 1
+#         case "n":
+#             if(lst[i+1] == "j"):
+#                 cnt += 1
+#             else:
+#                 cnt += 1
+#         case "s":
+#             if(lst[i+1] == "="):
+#                 cnt += 1
+#             else:
+#                 cnt += 1
+#         case "z":
+#             if(lst[i+1] == "="):
+#                 cnt += 1
+#             else:
+#                 cnt += 1
+#         case _:
+#             cnt += 1
+
+# print(cnt)
+
+input = sys.stdin.readline
+s = input().strip()
+lst = list(s)
+i = 0
+cnt = 0
+
+while i < len(lst):
+    if i+1 < len(lst) and lst[i] == 'c' and lst[i+1] in ['=', '-']:
+        i += 2
+    elif i+2 < len(lst) and lst[i] == 'd' and lst[i+1] == 'z' and lst[i+2] == '=':
+        i += 3
+    elif i+1 < len(lst) and lst[i] == 'd' and lst[i+1] == '-':
+        i += 2
+    elif i+1 < len(lst) and lst[i] in ['l', 'n'] and lst[i+1] == 'j':
+        i += 2
+    elif i+1 < len(lst) and lst[i] in ['s', 'z'] and lst[i+1] == '=':
+        i += 2
+    else:
+        i += 1
+
+    cnt += 1
+
+print(cnt)
 
 
 # ----------------------------------------------------------
