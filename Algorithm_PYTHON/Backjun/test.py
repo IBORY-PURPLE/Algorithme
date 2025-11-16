@@ -293,32 +293,54 @@ input = sys.stdin.readline
 
 # print(cnt)
 
-input = sys.stdin.readline
-s = input().strip()
-lst = list(s)
-i = 0
-cnt = 0
+# input = sys.stdin.readline
+# s = input().strip()
+# lst = list(s)
+# i = 0
+# cnt = 0
 
-while i < len(lst):
-    if i+1 < len(lst) and lst[i] == 'c' and lst[i+1] in ['=', '-']:
-        i += 2
-    elif i+2 < len(lst) and lst[i] == 'd' and lst[i+1] == 'z' and lst[i+2] == '=':
-        i += 3
-    elif i+1 < len(lst) and lst[i] == 'd' and lst[i+1] == '-':
-        i += 2
-    elif i+1 < len(lst) and lst[i] in ['l', 'n'] and lst[i+1] == 'j':
-        i += 2
-    elif i+1 < len(lst) and lst[i] in ['s', 'z'] and lst[i+1] == '=':
-        i += 2
-    else:
-        i += 1
+# while i < len(lst):
+#     if i+1 < len(lst) and lst[i] == 'c' and lst[i+1] in ['=', '-']:
+#         i += 2
+#     elif i+2 < len(lst) and lst[i] == 'd' and lst[i+1] == 'z' and lst[i+2] == '=':
+#         i += 3
+#     elif i+1 < len(lst) and lst[i] == 'd' and lst[i+1] == '-':
+#         i += 2
+#     elif i+1 < len(lst) and lst[i] in ['l', 'n'] and lst[i+1] == 'j':
+#         i += 2
+#     elif i+1 < len(lst) and lst[i] in ['s', 'z'] and lst[i+1] == '=':
+#         i += 2
+#     else:
+#         i += 1
 
-    cnt += 1
+#     cnt += 1
 
-print(cnt)
+# print(cnt)
 
 
 # ----------------------------------------------------------
+
+N = int(input().strip())
+cnt = 0
+
+def s_continue(s):
+    set = []
+    lst = list(s)
+    while i < range(s):
+        i = 0
+        if (lst[i] != lst[i+1]):
+            set.append(lst[i])
+        elif (lst[i] in set):
+            return 0
+        i += 1
+
+    return 1
+
+
+for _ in range(N):
+    s = input().strip()
+    cnt += s_continue(s)
+
 
 # ----------------------------------------------------------
 
